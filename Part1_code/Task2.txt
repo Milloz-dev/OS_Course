@@ -1,0 +1,30 @@
+Task 2. Shared memory buffer
+
+Modify the program in Listing 2 (shmem.c) so the buffer contains 10 numbers instead of only one number. Implement it
+as a circular, bounded buffer, i.e.,
+
+• the items shall be fetched by the consumer in the same order at they were put into the buffer by the producer,
+• when you come to the end of the buffer you start over from the first buffer place, and
+• it is not allowed to fill the buffer with 10 items before the consumer runs / fetches items in the buffer.
+
+The producer, i.e., the parent process, shall wait a random time between 0.1s - 0.5s each time it has put a number into the
+buffer. Similarly, the consumer, i.e., the child process, shall also wait a random time between 0.2s - 2s each time it has
+fetched a number from the buffer.
+
+Comment your program and explain where and how the problems described above can occur.
+
+Race Conditions:
+    Problem: If synchronization mechanisms are not used properly, race conditions could occur where both processes read/write to the buffer simultaneously.
+    Solution: The counters (empty_slots and full_slots) prevent simultaneous access by ensuring proper waiting conditions.
+
+Deadlocks:
+    Problem: If one process waits indefinitely for the other, a deadlock can occur.
+    Solution: Proper update of counters and random delays reduce the risk of indefinite waiting.
+
+Buffer Overflow/Underflow:
+    Problem: Writing to a full buffer (overflow) or reading from an empty buffer (underflow) can cause incorrect behavior.
+    Solution: The program explicitly checks for empty_slots and full_slots to prevent overflow or underflow.
+
+Timing Dependencies:
+    Problem: If one process consistently runs faster than the other, it could dominate and cause inefficient use of the buffer.
+    Solution: Random delays in both producer and consumer balance the interaction.
