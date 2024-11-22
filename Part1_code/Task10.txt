@@ -21,3 +21,9 @@ There are some restrictions for your implementation.
 
 An implementation done in line with the description above is not deadlock-free, i.e., it may result in a deadlock.
 Explain why, i.e., which conditions lead to the deadlock?
+
+1. All five professors pick up their left chopstick simultaneously.
+    Each professor now holds one chopstick.
+    No professor can proceed to pick up the right chopstick because it is already held by their neighbor.
+
+2. All professors are stuck, waiting for their neighbor to release a chopstick, which never happens because everyone is waiting.

@@ -4,5 +4,16 @@ Modify the program from Task 10 so the program is deadlock-free, i.e., you can g
 
 Which are the four conditions for deadlock to occur?
 
+    Mutual Exclusion
+
+    Hold & Wait
+
+    No preemption
+
+    Circular Wait
+
 Which of the four conditions did you remove in order to get a deadlock-free program, and how did you do that in your
 program?
+
+    Circular Wait was removed by enforcing a strict order: professors always pick up the smaller-numbered chopstick first, then the larger. 
+    This prevents circular dependencies and avoids deadlock.
