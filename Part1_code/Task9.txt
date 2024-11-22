@@ -1,0 +1,6 @@
+Task 9. Bank account, correction
+
+Correct the program in Listing 9 (bankaccount.c) by introducing proper synchronizations on shared variables.
+
+The shared variable(s) that are protected and accessed in critical sections should be locked as short time as possible, i.e.,
+you are supposed to keep the critical sections are short as possible.

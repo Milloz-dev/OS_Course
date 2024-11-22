@@ -1,0 +1,8 @@
+Task 11. Dining Professors, deadlock-free implementation
+
+Modify the program from Task 10 so the program is deadlock-free, i.e., you can guarantee that no deadlock can occur.
+
+Which are the four conditions for deadlock to occur?
+
+Which of the four conditions did you remove in order to get a deadlock-free program, and how did you do that in your
+program?
