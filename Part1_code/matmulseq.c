@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define SIZE 1024
 
@@ -58,7 +59,17 @@ print_matrix(void)
 int
 main(int argc, char **argv)
 {
+    clock_t start, end;
+    double cpu_time_used;
+
     init_matrix();
+    start = clock();
     matmul_seq();
+    end = clock();
+
+    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("Time taken: %.6f seconds\n", cpu_time_used);
+
+    return 0;
     //print_matrix();
 }

@@ -1,0 +1,3 @@
+How long time did it take to execute the program?
+
+Time taken: 3.709386 seconds
